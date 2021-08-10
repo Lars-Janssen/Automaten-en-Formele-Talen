@@ -1,0 +1,46 @@
+3.4 question 1)
+### Your answer here ###
+No, it can have more states than the original, or less. It can also have
+a different amount of transitions.
+Take, for example, a TM which has a six bit string as input and turns every
+1 into a 0. This can have 3 state and 4 transitions:
+
+Q = ['t', 'r', 'Q1']
+Sigma = ['0', '1']
+Gamma = ['0', '1', '⊔', '⊢']
+delta = [(('Q1', '⊢'), ('Q1', '0', '>')),
+         (('Q1', '0'), ('Q1', '0', '>')),
+         (('Q1', '1'), ('Q1', '0', '>'))
+         (('Q1', '⊔'), ('t', '0', '>'))
+        ]
+s = 'Q1'
+t = 't'
+r = 'r'
+
+But it can also have 4 states and 7 transitions:
+
+Q = ['t', 'r', 'Q1','Q2']
+Sigma = ['0', '1']
+Gamma = ['0', '1', '⊔', '⊢']
+delta = [(('Q1', '⊢'), ('Q1', '0', '>')),
+         (('Q1', '0'), ('Q1', '0', '>')),
+         (('Q1', '1'), ('Q2', '0', '>')),
+         (('Q2', '0'), ('Q1', '0', '>')),
+         (('Q2', '1'), ('Q1', '0', '>')),
+         (('Q1', '⊔'), ('t', '0', '>')),
+         (('Q2',' ⊔'), ('t', '0', '>'))
+        ]
+s = 'Q1'
+t = 't'
+r = 'r'
+
+These two will give the same execution trace for every six bit string input,
+but I wouldn't call them identical.
+
+3.4 question 2)
+### Your answer here ###
+I don't think so. If you make a TM from the first trace, you can also use it
+to get the second trace, since only the last step is different and this
+transition also exists in the first trace.
+So this trace gives no new information, so you don't need all 64 traces
+to create the TM.

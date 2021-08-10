@@ -1,0 +1,8 @@
+2.4 A)
+The produced TM-tape is 100010
+
+2.4 B)
+I think the TM is designed to invert the bitstring,
+so it wouldn't do the same to other lentgh bitstrings,
+as in it wouldn't produce the exact same thing as for this
+bitstring, but it will invert it.
